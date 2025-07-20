@@ -6,19 +6,20 @@ import { Analytics } from "./components/analytics";
 
 export const metadata: Metadata = {
   title: {
-    default: "chronark.com",
-    template: "%s | chronark.com",
+    default: "myscheme.app",
+    template: "%s | myscheme.app",
   },
-  description: "Co-founder of unkey.dev and founder of planetfall.io",
+  description:
+    "myscheme.app is a government schemes portal that allows you to create, manage, and validate schemes for your users with rich content and visuals.",
   openGraph: {
-    title: "chronark.com",
+    title: "myscheme.app",
     description:
-      "Co-founder of unkey.dev and founder of planetfall.io",
-    url: "https://chronark.com",
-    siteName: "chronark.com",
+      "myscheme.app is a government schemes portal that allows you to create, manage, and validate schemes for your users with rich content and visuals.",
+    url: "https://myscheme.app",
+    siteName: "myscheme.app",
     images: [
       {
-        url: "https://chronark.com/og.png",
+        url: "https://myscheme.app/og.png",
         width: 1920,
         height: 1080,
       },
@@ -38,13 +39,14 @@ export const metadata: Metadata = {
     },
   },
   twitter: {
-    title: "Chronark",
+    title: "myscheme.app",
     card: "summary_large_image",
   },
   icons: {
     shortcut: "/favicon.png",
   },
 };
+
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
@@ -61,13 +63,12 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={[inter.variable, calSans.variable].join(" ")}>
+    <html lang="en" className={`${inter.variable} ${calSans.variable}`}>
       <head>
         <Analytics />
       </head>
       <body
-        className={`bg-black ${process.env.NODE_ENV === "development" ? "debug-screens" : undefined
-          }`}
+        className={`bg-[#f8f9fa] text-[#111] ${process.env.NODE_ENV === "development" ? "debug-screens" : ""}`}
       >
         {children}
       </body>
